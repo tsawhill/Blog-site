@@ -1,0 +1,134 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+        <script>
+            function validateForm(){
+                if(document.getElementById("name").value == ""){
+                    alert("Name must not be empty!");
+                    return false;
+                }
+                if(document.getElementById("em").value == ""){
+                    alert("Email must not be empty!");
+                    return false;
+                }
+                if(isNaN(document.getElementById('phone').value)){
+                    alert("Phone number must be a number!");
+                    return false;
+                }
+                if(document.getElementById("phone").value == ""){
+                    alert("Phone number must not be empty!");
+                    return false;
+                }
+            }
+        </script>
+        <title>Blog Site</title>
+        <style>
+            .test * { max-height: none;
+            max-width: none}
+            .accent * {
+                background-color: #e5eaf5;
+            }
+        </style>
+
+    </head>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark" style ="background-color: #e76f51;">
+            <h1 class="navbar-brand text-dark">Blog Site</h1>
+            <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ">
+                <li class="nav-item px-3">
+                    <a href = "index.html" class="nav-link text-dark">
+                        <i class="fas fa-home"></i>  Home
+                    </a>
+                </li>                
+                <li class="nav-item px-3">
+                    <a href = "about.html" class="nav-link text-dark">
+                        <i class ="fas fa-male"></i>  About Me
+                    </a>
+                </li>
+                <li class="nav-item px-3">
+                    <a href = "contact.html" class ="nav-link text-dark">
+                        <i class="fas fa-envelope"></i>    Contact me
+                    </a>
+                </li>
+            </ul>
+            
+            <ul class="navbar-nav ml-auto">
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn my-2 my-sm-0" type="submit" style="background-color: #51C9E7">Search</button>
+                  </form>
+            </ul>
+            
+        </nav>
+    </header>
+    <body>
+        <br/>
+        <div class="d-flex w-100 shadow-lg p-3 mb-5 bg-white rounded">
+            <div class="col-2" style="justify-self: center;">
+                <ul class="list-group">
+                    <li class="list-group-item " style ="background-color: #e76f51;">Recent posts</li>
+                    <li class="list-group-item"><a href ="" class="text-dark">COVID Thoughts</a></li>
+                    <li class="list-group-item"><a href ="" class="text-dark">Apple Event 2020</a></li>
+                    <li class="list-group-item"><a href ="" class="text-dark">Google Event 2020</a></li>
+                    <li class="list-group-item"><a href ="" class="text-dark">AMD Launch New CPUs</a></li>
+                    <li class="list-group-item"><a href ="" class="text-dark">Rodent infestation at my house!</a></li>
+                    <li class="list-group-item"><a href ="" class="text-dark">New Fridge</a></li>
+                    <li class="list-group-item"><a href ="" class="text-dark">I Broke My Elbow!</a></li>
+                </ul>
+            </div>
+            <div class="col-10 shadow-lg p-3 mb-5 bg-white rounded">
+                <form onsubmit = "return validateForm()">
+                    <div class ="card-header " style="background-color: #e76f51;">
+                        <div class="card-title" style="background-color: #e76f51;"><h3>Contact me</h3></div>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label>Your name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter name">
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" id="em" placeholder="Enter email" class="form-control">
+                        </div>
+                        <label>Gender</label><br>
+                        <div class="form-group" style="padding-left: 30px;">
+                            <input class="form-check-input" type="radio" name="radio" id="radio1" value="male" checked>
+                            <label for="radio1">Male</label><br/>
+                            <input class="form-check-input" type="radio" name="radio" id="radio2" value="female">
+                            <label for="radio2">Female</label><br/>
+                            <input class="form-check-input" type="radio" name="radio" id="radio3" value="other">
+                            <label for="radio3">Other</label><br/>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone number</label>
+                            <input type="number" id= "phone" class="form-control" placeholder="Enter number">
+                        </div>
+                        <div class="form-group">
+                            <label>Inquiry About</label>
+                            <select>
+                                <option id='order'>Order</option>
+                                <option id = 'payment'>Payment</option>
+                                <option id ='other'>Other</option>
+
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Message</label>
+                            <textarea placeholder = 'Enter your message' style="height:100px; width:800px;"></textarea>
+                        </div>
+                        <input type="submit" class="btn btn-success">
+                    </div>
+                </form>
+            </div>
+             
+       
+    </body>
+</html>
+
